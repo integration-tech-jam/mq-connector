@@ -1,45 +1,93 @@
-openapi: 3.0.1
-info:
-  title: OpenAPI definition
-  version: v0
-servers:
-  - url: http://localhost:8080
-    description: Generated server url
-paths:
-  /:
-    post:
-      tags:
-        - user-info-controller
-      operationId: createLeadInSalesforce
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserInfo'
-        required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            '*/*':
-              schema:
-                type: string
-components:
-  schemas:
-    UserInfo:
-      type: object
-      properties:
-        id:
-          type: string
-        fname:
-          type: string
-        lname:
-          type: string
-        email:
-          type: string
-        phone:
-          type: string
-        company:
-          type: string
-        comments:
-          type: string
+{
+"openapi": "3.0.1",
+"info": {
+"title": "OpenAPI definition",
+"version": "v0"
+},
+"servers": [
+{
+"url": "https://mq-connector-git-apps.itzroks-664003bjy8-vrxe0s-6ccd7f378ae819553d37d5f2ee142bd6-0000.eu-gb.containers.appdomain.cloud",
+"description": "Generated server url"
+}
+],
+"paths": {
+"/": {
+"get": {
+"tags": [
+"user-info-controller"
+],
+"operationId": "hello",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"user-info-controller"
+],
+"operationId": "createLeadInSalesforce",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/UserInfo"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/UserInfo"
+}
+}
+}
+}
+}
+}
+}
+},
+"components": {
+"schemas": {
+"UserInfo": {
+"type": "object",
+"properties": {
+"id": {
+"type": "string"
+},
+"fname": {
+"type": "string"
+},
+"lname": {
+"type": "string"
+},
+"email": {
+"type": "string"
+},
+"phone": {
+"type": "string"
+},
+"company": {
+"type": "string"
+},
+"comments": {
+"type": "string"
+}
+}
+}
+}
+}
+}

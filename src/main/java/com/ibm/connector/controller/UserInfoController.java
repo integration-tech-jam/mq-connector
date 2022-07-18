@@ -17,7 +17,7 @@ public class UserInfoController {
 		return new ResponseEntity<UserInfo>(userInfo, HttpStatus.CREATED);
 	}
 	
-	@GetMapping
+	@GetMapping("/hello")
 	public String hello() {
 		return "hellow world";
 	}
