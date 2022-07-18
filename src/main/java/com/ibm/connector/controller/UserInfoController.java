@@ -13,8 +13,8 @@ import com.ibm.connector.data.UserInfo;
 public class UserInfoController {
 
 	@PostMapping
-	public ResponseEntity<String> createLeadInSalesforce(@RequestBody UserInfo userInfo) {
-		return new ResponseEntity<String>("123456", HttpStatus.CREATED);
+	public ResponseEntity<UserInfo> createLeadInSalesforce(@RequestBody UserInfo userInfo) {
+		return new ResponseEntity<UserInfo>(userInfo, HttpStatus.CREATED);
 	}
 	
 	@GetMapping
